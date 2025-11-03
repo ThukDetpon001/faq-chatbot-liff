@@ -5,7 +5,7 @@ import sendIcon from "./assets/send.png";
 import "./App.css";
 
 
-const LIFF_ID = "";
+const LIFF_ID = "ใส่ Line liff Id "; // เปลี่ยนตรงนี้เป็น LIFF ID ของคุณ
 const PROXY_URL =
   "https://script.google.com/macros/s/AKfycbwAgauAoI4z1XXuISfwcNY-ANLyPuQtQFIWZU9DRvOoATIC80UenXbPlBl4sUKfwvZbng/exec";
 
