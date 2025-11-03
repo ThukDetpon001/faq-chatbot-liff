@@ -1,0 +1,194 @@
+:root {
+  --brand: #1a73e8;
+  --bg: #f5f7fb;
+  --text: #222;
+  --muted: #6b7280;
+  --white: #fff;
+  --border: #e5e7eb;
+}
+
+html,
+body,
+#root {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: var(--text)
+}
+
+.chatwin {
+  width: 100%;
+  max-width: 680px;
+  height: 100dvh;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border)
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+.chat-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.title {
+  font-weight: 600
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--muted)
+}
+
+.messages {
+  flex: 1;
+  overflow: auto;
+  background: var(--bg);
+  padding: 14px
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  margin: 6px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.45
+}
+
+.me {
+  background: #e8f1ff;
+  margin-left: auto;
+  border: 1px solid #d7e6ff
+}
+
+.bot {
+  background: #fff;
+  border: 1px solid var(--border)
+}
+
+.timestamp {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px
+}
+
+/* แทนที่บล็อกเดิมชุด inputbar ด้วยอันนี้ เพื่อให้เตี้ยลงแบบ LINE และจัดปุ่มไม่หลุดแนว */
+
+/* แถบป้อนข้อความ */
+.inputbar {
+  display: flex;
+  align-items: center;    /* จัดกึ่งกลางแนวตั้ง */
+  gap: 6px;               /* ระยะห่างระหว่างช่องพิมพ์กับปุ่ม */
+  padding: 6px 8px;       /* ทำให้บาร์ล่างเตี้ยลง */
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+/* กล่องพิมพ์ เตี้ยลง ทรงแคปซูล */
+.inputbar textarea {
+  flex: 1;
+  min-height: 34px;
+  height: 34px;           /* เริ่มต้นเท่ากับ min-height */
+  max-height: 88px;
+  line-height: 20px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 18px;    /* ทรงแคปซูลคล้าย LINE */
+  resize: none;           /* ไม่ให้ดึงยืดด้วยเมาส์ */
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+  overflow: auto;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* กฎปุ่มทั่วไปในบาร์ (ไม่ย้อมสี ไม่ใส่ padding) */
+.inputbar button {
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ปุ่มส่งแบบไอคอนล้วน ไม่มีพื้นหลัง และไม่กินพื้นที่เกิน */
+.send-btn {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ไอคอนส่ง */
+.send-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* เอฟเฟกต์ hover บอกสถานะคลิกได้ */
+.send-btn:hover .send-icon { opacity: 0.7; }
+
+.typing {
+  display: inline-block
+}
+
+.typing .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 2px;
+  background: #bbb;
+  border-radius: 50%;
+  animation: blink 1.2s infinite
+}
+
+.typing .dot:nth-child(2) {
+  animation-delay: .2s
+}
+
+.typing .dot:nth-child(3) {
+  animation-delay: .4s
+}
+
+@keyframes blink {
+
+  0%,
+  80%,
+  100% {
+    opacity: .2
+  }
+
+  40% {
+    opacity: 1
+  }
+}
