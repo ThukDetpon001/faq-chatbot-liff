@@ -5,7 +5,7 @@ import sendIcon from "./assets/send.png";
 import "./App.css";
 
 
-const LIFF_ID = "2008393134-RLoQ70jE";
+const LIFF_ID = "";
 const PROXY_URL =
   "https://script.google.com/macros/s/AKfycbwAgauAoI4z1XXuISfwcNY-ANLyPuQtQFIWZU9DRvOoATIC80UenXbPlBl4sUKfwvZbng/exec";
 
